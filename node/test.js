@@ -1,37 +1,45 @@
-/*
-     function bar (callback) {  
-       foo(function (err, data) {  
-         if (err)  
-           return callback(err) // early return  
-       
-         // ... no error, continue doing cool things with `data`  
-       
-         // all went well, call callback with `null` for the error argument  
-       
-         callback(null, data)  
-       })  
-     }
-*/
+
+
+
+/*var buff = fs.readFile(file, 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  var x=data.split('\n');
+  console.log(x.length-1);
+});*//*
+
 var fs = require('fs') 
 var path = require("path");
-module.exports = function checkFiles(err,dir,filter, callback) {
+var pathDir=process.argv[2];
+var suffix=process.argv[3];
+fs.readdir(pathDir, function (err, files) {
+    if (err) {
+        throw err;
+    }
 
-	var pathDir=dir;//args[2];
-	var suffix=filter; //args[3];
-console.log("DIR:"+dir);
-console.log("FILTER:"+filter);
-	fs.readdir(pathDir, function (err, files) {
-		if (err) {
-			 return callback(err);//throw err;
-		}
+    files.map(function (file) {
+        return path.join(pathDir, file);
+    }).filter(function (file) {
+        return fs.statSync(file).isFile();
+    }).forEach(function (file) {
+        //console.log("%s (%s)", file, path.extname(file));
+		if ( path.extname(file) === '.'+suffix) console.log(file.substr(file.lastIndexOf("/")+1,file.length));
+    });
+});
+*/
+var check = require('./checkFiles.js');
+//check(['/home/ubuntu/workspace/sandbox', 'js']);
+var err;
+//check(err, process.argv[2], process.argv[3]);
 
-		files.map(function (file) {
-			return path.join(pathDir, file);
-		}).filter(function (file) {
-			return fs.statSync(file).isFile();
-		}).forEach(function (file) {
-			if ( path.extname(file) === '.'+suffix) console.log(file.substr(file.lastIndexOf("/")+1,file.length));
-		}); 
-	return callback (null, files);
-	});
-	}
+check(process.argv[2],process.argv[3], function(err, data) {
+    if (err){
+        console.log (err);
+    }
+    else {
+        for (var i=0;i<data.length;i++){
+        console.log (data[i]);
+        }
+    }
+});
