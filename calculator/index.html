@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!--  Build a calculator challenge for FreeCodeCamp
+		author: Sergio Gaspar
+		date: 2016.12
+-->
+
+<!--  Small animated title -->
+<div id="titleHeader">
+	<h1>
+		<div class="animated fadeInLeft">Calculator</div>
+		<div class="animated fadeInRight">code challenge</div>
+	</h1>
+	<p class="animated fadeInUp delay-1">made for FreeCodeCamp</p>
+</div>
+
+<div class='container'>
+  <div id='calculator'>
+      <div id='title' class='text-center'>
+      <h5><b>FCC CALCULATOR</b></h5>
+    </div>
+
+    <!-- ENTRY BOX -->
+
+    <div id='entrybox' class='text-right'>
+      <div id='entry'>
+        <p id='current'></p>
+      </div>
+    </div>
+<div id='buttons'>
+
+	<button value='7' onclick="numberClick(this, event);">7</button>
+	<button value='8' onclick="numberClick(this, event);">8</button>
+	<button value='9' onclick="numberClick(this, event);">9</button>
+	<button value='/' onclick="operationClick(this, event);">&divide;</button>
+	<button class='red' onclick="acClick(this, event);" value='ac'>AC</button>
+	<button class='invisible'>N</button>
+	
+	<button value='4' onclick="numberClick(this, event);">4</button>
+	<button value='5' onclick="numberClick(this, event);">5</button>
+	<button value='6' onclick="numberClick(this, event);">6</button>
+	<button value='*' onclick="operationClick(this, event);">x</button>
+	<button class='red'*/ onclick="ceClick(this, event);" value='ce'>CE</button>
+	<button class='green' id = 'on' onclick="onFunc(this, event);" value='on'>ON</button>
+	<button class='invisible'>N</button>
+  
+	<button value='1' onclick="numberClick(this, event);">1</button>
+	<button value='2' onclick="numberClick(this, event);">2</button>
+	<button value='3' onclick="numberClick(this, event);">3</button>
+	<button value='-' onclick="operationClick(this, event);">-</button>
+	<button class='invisible'>N</button>
+	<button class='invisible'>N</button>
+	
+	<button id='zeroButton' onclick="zeroClick(this, event);" value='0'>0</button>
+	<button id='zero2Button' onclick="zeroClick(this, event);" value='00'>00</button>
+	<button value='.' onclick="dotClick(this, event);" >.</button>
+	<button value='+' onclick="operationClick(this, event);">+</button>
+	<button id='equalButton' onclick="equalClick(this, event);" value='='>=</button>
+	<button class='invisible'>N</button>
+	<button class='green' id = 'off' onclick="offFunc(this, event);" value='off'>OFF</button>
+
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+  <script src="https://use.fontawesome.com/c51cc08ec6.js"></script>
+  <div class="container-fluid text-center">
+    <div class="footer-text text-muted row">
+      Created by Sérgio Gaspar for freeCodeCamp Challenge:
+      <a href="https://www.freecodecamp.com/challenges/build-a-javascript-calculator" target="_blank">Build a Javascript Calculator</a>.
+    </div>
+	<div class="social-icons">
+	  <a href="https://github.com/sergiomgaspar" target="_blank"><i id="github" class="fa fa-github" aria-hidden="true"></i></a>
+	  <a href="http://codepen.io/sergiomgaspar/" target="_blank"><i id="codepen" class="fa fa-codepen" aria-hidden="true"></i></a>
+	  <a href="https://www.freecodecamp.com/sergiomgaspar" target="_blank"><i id="freecodecamp" class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+	  <a href="https://www.linkedin.com/in/sergiomgaspar" target="_blank"><i id="linkedin" class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/sergiomgaspar" target="_blank"><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+	</div>
+  </div>
+</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
