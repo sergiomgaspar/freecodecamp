@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>FCC Pomodoro</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <body>
+
+  <div id="wrap">
+  
+    <div id="setters">
+      <section class="setter-block" id="break-setter">
+        <h2>Break length</h2>
+        <img class="button break-minus icon icons8-Minus-2-Math" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACYklEQVR4Xu2YQVEEQRAEu52AEpAADpAACgAF4AAJIOFQAk6G2At4wWMqZouogNzPfabq+jK3HzddPFEEOmoahimEhL0ECEFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdiQvyBkjHFeVWdVtX3yfCdwqKrX7t4+pUfekDHGdVU9SN/yfw/fdPej8vMlIWOMk6p6U76As3Xa3e+zHFQhV1X1NFvOuSOBy+5+mWWhCrmrqtvZcs4dCdx398Zt6kHIFKalQwhZwrd/GCH7M11qRMgSvv3DCNmf6VIjQpbw7R9GyP5MlxqtQi6q6nlpvP8Xtv4x5OpEf6F8VyfbLFwuSka8l4tfo3xev29X71y//+xnu3Y//Mr1u/R+cFgmIN1lye0EZAIIkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/cjhAZmTeAEC9fuR0hMjJvACFevnI7QmRk3gBCvHzldoTIyLwBhHj5yu0IkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/cjhAZmTeAEC9fuR0hMjJvACFevnI7QmRk3gBCvHzldoTIyLwBhHj5yu0IkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/c/gF2XVJl7SIQUwAAAABJRU5ErkJggg==" width="64" height="64" />
+        <input class="length-field" id="break-length" type="text" readonly value="5"></input>
+        <img class="button break-plus icon icons8-Plus-2-Math" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADDElEQVR4Xu2dW5EUQRBFMxWABFAADgAH4AAJoABQAA6QAA5YHCwKQAIoKKIiZoO/ZfJxZ7M3Tn9X3s4+Z2oitraqx41rFAEf1Q3NGEKGfQgQgpBhBIa1wwxByDACw9phhiBkGIFh7TBDEDKMwLB2DjdD1lqPzOyJmT39D8trM/vh7r+GMb+1nUMJWWu9MbOPQcBv3f1TsObOhh9GyFrruZl9S5J64e5XydqLlh1JyHsze5ek88Hdd/3460hC9if8WZLod3ffM2z8hZBhihCCkByBtRZfWTl0miqEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRMgtXE8bn/e2zktuz9zHDx4mdf82s3084VLX3kO2t6+GN3iHdy4mjwRcCsS0+4SPQoSEnA7L/Jz21MP7eRw5NBQV8trMPg8HMK29V+7+9dymokIqZzTO7em+jQudTUGIXj9C9IxDd0BICJd+MEL0jEN3QEgIl34wQvSMQ3dASAiXfrBUyEsz+6J/hnt1B+kfhvs9IyydxD4vuqWT3QeLiyEb2sXFm1ZOy+976f3Sy+8PQjj+Df5zB8vvVxdZfk8CKZfxD6oywt4AhPTyLKchpIywNwAhvTzLaQgpI+wNQEgvz3IaQsoIewMQ0suznIaQMsLeAIT08iynIaSMsDcAIb08y2kIKSPsDUBIL89yGkLKCHsDENLLs5yGkDLC3gCE9PIspyGkjLA3ACG9PMtpCCkj7A1ASC/PchpCygh7AxDSy7OchpAywt4AhPTyLKchpIywN2CtVTmSHTqj0dt5LC10LDoW3TuaH5bs5dmSljwKET4S0NJsMuQwM+Tm+U7vW9lvBjrnx4mvI+8ZSTJsLTuckNanHxiGkGFSEIKQYQSGtcMMQcgwAsPaYYYgZBiBYe0wQxAyjMCwdpghw4T8BfWXjnTS1JV+AAAAAElFTkSuQmCC" width="64" height="64" />
+      </section>
+      <section class="setter-block" id="session-setter">
+        <h2>Session length</h2>
+        <img class="button session-minus icon icons8-Minus-2-Math" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACYklEQVR4Xu2YQVEEQRAEu52AEpAADpAACgAF4AAJIOFQAk6G2At4wWMqZouogNzPfabq+jK3HzddPFEEOmoahimEhL0ECEFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdgQhIQRCBuHDUFIGIGwcdiQvyBkjHFeVWdVtX3yfCdwqKrX7t4+pUfekDHGdVU9SN/yfw/fdPej8vMlIWOMk6p6U76As3Xa3e+zHFQhV1X1NFvOuSOBy+5+mWWhCrmrqtvZcs4dCdx398Zt6kHIFKalQwhZwrd/GCH7M11qRMgSvv3DCNmf6VIjQpbw7R9GyP5MlxqtQi6q6nlpvP8Xtv4x5OpEf6F8VyfbLFwuSka8l4tfo3xev29X71y//+xnu3Y//Mr1u/R+cFgmIN1lye0EZAIIkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/cjhAZmTeAEC9fuR0hMjJvACFevnI7QmRk3gBCvHzldoTIyLwBhHj5yu0IkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/cjhAZmTeAEC9fuR0hMjJvACFevnI7QmRk3gBCvHzldoTIyLwBhHj5yu0IkZF5Awjx8pXbESIj8wYQ4uUrtyNERuYNIMTLV25HiIzMG0CIl6/c/gF2XVJl7SIQUwAAAABJRU5ErkJggg==" width="64" height="64" />
+        <input class="length-field" id="session-length" type="text" readonly value="25"></input>
+        <img class="button session-plus icon icons8-Plus-2-Math" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAADDElEQVR4Xu2dW5EUQRBFMxWABFAADgAH4AAJoABQAA6QAA5YHCwKQAIoKKIiZoO/ZfJxZ7M3Tn9X3s4+Z2oitraqx41rFAEf1Q3NGEKGfQgQgpBhBIa1wwxByDACw9phhiBkGIFh7TBDEDKMwLB2DjdD1lqPzOyJmT39D8trM/vh7r+GMb+1nUMJWWu9MbOPQcBv3f1TsObOhh9GyFrruZl9S5J64e5XydqLlh1JyHsze5ek88Hdd/3460hC9if8WZLod3ffM2z8hZBhihCCkByBtRZfWTl0miqEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRIiGazoVIWl0mkKEaLimUxGSRqcpRMgtXE8bn/e2zktuz9zHDx4mdf82s3084VLX3kO2t6+GN3iHdy4mjwRcCsS0+4SPQoSEnA7L/Jz21MP7eRw5NBQV8trMPg8HMK29V+7+9dymokIqZzTO7em+jQudTUGIXj9C9IxDd0BICJd+MEL0jEN3QEgIl34wQvSMQ3dASAiXfrBUyEsz+6J/hnt1B+kfhvs9IyydxD4vuqWT3QeLiyEb2sXFm1ZOy+976f3Sy+8PQjj+Df5zB8vvVxdZfk8CKZfxD6oywt4AhPTyLKchpIywNwAhvTzLaQgpI+wNQEgvz3IaQsoIewMQ0suznIaQMsLeAIT08iynIaSMsDcAIb08y2kIKSPsDUBIL89yGkLKCHsDENLLs5yGkDLC3gCE9PIspyGkjLA3ACG9PMtpCCkj7A1ASC/PchpCygh7AxDSy7OchpAywt4AhPTyLKchpIywN2CtVTmSHTqj0dt5LC10LDoW3TuaH5bs5dmSljwKET4S0NJsMuQwM+Tm+U7vW9lvBjrnx4mvI+8ZSTJsLTuckNanHxiGkGFSEIKQYQSGtcMMQcgwAsPaYYYgZBiBYe0wQxAyjMCwdpghw4T8BfWXjnTS1JV+AAAAAElFTkSuQmCC" width="64" height="64" />
+      </section>
+    </div>
+    
+    <div id="clock">
+      <div id="timer">
+        <p id="time">25:00</p>
+      </div>
+    </div>
+
+    <div id="control-buttons">
+      <div class="button control-button play-pause">
+        <img class="icon icons8-Play" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABw0lEQVR4Xu3a0U0DMRAE0NlKoIRQAS3QAbRAB6GDdAB0AB1AB5SQdAAVLFopF0UIge3zecfn9U9+cj7P8zqSHQsGbzJ4fgRAVMDgArEEBi+A+BGMJRBLYHCBWAKlBaCqGwAXAA4i8lHaj/dzRRWgqo8A7s4G/wbgQUTss6uWDaCqFtwAfmsGsBOR114USgCeANz+E3APYCsiz+wQJQA2y9eJweghlgaYnGghWgHQQrQGoIPwAqCB8AZwh2ABcINgA2gOwQrQDIIdYHGIXgAWg+gNoDpErwDVIHoHOIe4F5GXxE3a6WtrAbBAnwCuRMQ2XsltTQAW2k6ltsnpgfw/RlQ15zwgZyw1vmvLYJfT0Zoq4AvAZtQlcABwU3I63XsFWHA7e7RzyqLWK8Ds4JNWbwDVgvcGUD14LwCLBWcHWDw4K0Cz4GwAzYOzALgF9wZwD+4FQBO8NQBd8FYAtMHnAKRckKAPPgfgrysy78crMtlnc0VbuQoPZW+G7J2q+rMKLLhtS9d/SWpCP16TuwSwLzmIqDB5VbooqoAqbybpJABIJsJtGFEBbvQkL44KIJkIt2FEBbjRk7w4KoBkItyGMXwFfAM4KexB15NqiAAAAABJRU5ErkJggg==" width="64" height="64" />
+        <img class="icon icons8-Pause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABg0lEQVR4Xu1awVEDMRCTOqATSAdQAVABdAClhBKogFABdEDohA7EbHJ5kZmTk9yQOcvvtc4r79pr3RKdD3buP0JAIqBzBpICnQdADsGkQFKgcwaSAscEgKQLAE8ArkdwVgBeSf443xtwHwDcjdh/AnhxcfdhHRUBkr4AXDlOAViRvHdsJb0Zzu+g1iQXDu5JCZBUjhcB9iBpES5JNujWcEFy3ThnY24taB+wpAr7j5aPTkjADclKh+YRApopGyYkApICOQNyCOYWyDWYOiCFUEsdkUpwurdASuG8BfIYymswz+GWG2lnGz3gENZqTvSA6AHRA6IHRA+IHhA9IHpASx0RPSB6wGQ/RyOIRBCJIBJBJIJIy5V8CkGk7xaZQRSpvpxLk/l3kmNdXxsoSdVVdmvifpN0G7X+QB4siQ0LrTa5Z6dNjuTSdKgIKNxHo1Os8n75b21yrkPnbHdUBJyzY+7aQoDL1FztEgFz3VnXr0SAy9Rc7RIBc91Z169EgMvUXO1+Abnfb1CP/n9dAAAAAElFTkSuQmCC" width="64" height="64" />
+      </div>
+      <div class="button control-button reset"><img class="icon icons8-Restart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFQUlEQVR4Xu1bi3EUMQyVKgAqIKkAUgGkApIKIBUQKoBUAKmAUAFJBSQVkFRAUgGkAjFvxz5272xJ68/dQfDMDZnBlq1n6UmWvUyNm4g8J6JnRIR/8bti5g+Np2kmjmskJZR9mZB3yMznNfP0HOsGwKlsaq27zHzbU4ka2UkAKpRdXss9Mz+uWeDyWBGBNX0nolNm/lUrmxsqm1oL/D/lFsXrFpFLInpBRFD+AzOfFgsjIgDwhog+1whRxp60JsARAHFauBd45rpEh8EFOoLQnAATAES9YQ0nc0FYcEAnEJoToAIAdId7AHQ3N0xIsDEIzQkwWGvkgNxmwxX2vSCsRIGGIDQnQCcA6ObmhVwYbEGMzQkwAPCJiN46fB1uAEtQyTGbCDWwhOYEGJUWkQMiOiOiRwYQpjuomaCIfCOi0jjenADHyooIEiwkRcgJtHbOzIe5Dr0soAsBppQQEVjCawOErDvmOGAnpJulaWwXAswp6QQBfIAIMmk5AGpMHxN0IUBtlx0gXDPznglAIJivDpbVunQjQAMEcMIrpc8RM8NlFi2VB/wgIrhAqt3jAEJEHw2AuhKg4gpwWeQAueiA0Ii1LTLFuZngsLNGiFwbAWZIESFSs+CJey4DoO3+hNgUENZKgAWR4ZaZd+O48WHIQm7FrDMgrJ0Al0EQEbgwNjPXFhw1BkAjkC/MjPR4pSVA2AgBJkDQ8oMLZsaGU6wHgDx+KoglY2jsvwTCRgiwwAqegAwjAJr5u3w6gPCpdQ2wJhyLCM4CKNGn2mCpEQDthPWOmfH/ZkN90Tp9mUIadhCRYyVko6h6HAFAlRWXGKm2t01KzcHHIMPBsiMAkhG80Zg+R9lcXxFB0pNMjBhNRHDcRe6fagu2bLGYTcgI9wi59HjfAmDjMb0WNBFB6v4+I2cAQOvw4AHYiqSmxgoMFz+xLEBNgGoWtq6x/wHQSf6/BVgu8C9wgHbHMViAdg54EFHgISdCe1YqPKmerIu5W84jItkq15AKYzIRQSHxaWbirTjfl4BiHIbumHknAqBVT1ZKySWL2cQYo3g7VLk8L0QumXl/EwrUziki2jF/UhCxioh/nRs4CqN/SmKBB4qKorW71Gu8cVU2LYoGAKxHEQNivRbcUq5j9xe8tnwxkq2eEFG2NN5y8S1kGbs/qXItA6DVBrC2rT8dGqc/6KBejVmXi8gXUCTdSlcIr0bA/Nrl7k72cjRwgVZKRhf1yUkLEy6VISK4FB1ufDJtpcSfeyChXShA9hkzH5UutMc4EcFz3+T1XZjvhplXSv85ALQDUly/+8Kkh8JjmSKCoqf1UYb/iUxwBYsQt8ISHDu/Qnxj8Kxnctaz1IETiAhxda3EGAgPZq/5PNan3m1aACAqAITcBWMEE9EBIKy8wuph/iHUQfkc28dpb/DOUdsc85OZkFWBFK1XmYNLhDjb5ROZsBb4u0Z2UXm8Z8JlrboWE4DAB2BP7K4HhOZAzFQc80N57Lz5EYULgAACzA3+brnD2OoBGqwCfjjLKoLSeAaLvCR3c53yMJj9gXc+NwABBO/73NTCAAB2BD/8vQwIAMYvfm9o+XdqjqugvJuQZwEQZzTuE3vwnkdmUQW7CIBgDUiW8HJkjkt4FJnbByZ/XBqBigEYWQN8FEmTlyDnKpjrP7xa9T7fyQmpBmDEDQACv95AQHFYHh5kuX29KwBj4aESi+xMe7RcYgUX4SQ6eexcIsidCtcID6kqgABX4Je7d8hNcxdyD4ReVKardzs1URMX8AIVPtONoS41bAiRngTGO6fV7zeNIYfxRvMuIQAAAABJRU5ErkJggg==" width="64" height="64" /></div>
+    </div>
+  
+  </div>
+
+</body>
+
+<footer class="footer">
+  <script src="https://use.fontawesome.com/c51cc08ec6.js"></script>
+  <div class="container-fluid text-center">
+    <div class="footer-text text-muted row">
+      Created by Sérgio Gaspar for freeCodeCamp Challenge:
+      <a href="https://www.freecodecamp.com/challenges/build-a-pomodoro-clock" target="_blank">Build a Pomodoro Clock</a>.
+      
+    </div>
+	<div class="social-icons">
+	  <a href="https://github.com/sergiomgaspar" target="_blank"><i id="github" class="fa fa-github" aria-hidden="true"></i></a>
+	  <a href="http://codepen.io/sergiomgaspar/" target="_blank"><i id="codepen" class="fa fa-codepen" aria-hidden="true"></i></a>
+	  <a href="https://www.freecodecamp.com/sergiomgaspar" target="_blank"><i id="freecodecamp" class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+	  <a href="https://www.linkedin.com/in/sergiomgaspar" target="_blank"><i id="linkedin" class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/sergiomgaspar" target="_blank"><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+	</div>
+  </div>
+</footer>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

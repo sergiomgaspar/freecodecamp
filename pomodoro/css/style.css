@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 35%;
+}
+
+#wrap {
+  width: 100%;
+  max-width: 800px;
+  margin: 3% auto 0;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
+  padding: 3% 0;
+  box-sizing: border-box;
+}
+
+.setter-block {
+  display: inline-block;
+}
+
+h2 {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  font-size: 2em;
+  border: none;
+  text-align: center;
+  vertical-align: top;
+  margin: 14px 0;
+  z-index: -9999;
+}
+
+section + section {
+  margin-left: 2%;
+}
+
+#setters,
+#clock,
+#control-buttons {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 200ms ease-out;
+}
+
+.button:hover {
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
+}
+
+.break-minus,
+.break-plus,
+.session-minus,
+.session-plus {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.break-minus,
+.break-plus {
+  background-color: #00E676;
+}
+
+.break-minus:active,
+.break-plus:active {
+  background-color: #00C853;
+}
+
+.session-minus,
+.session-plus {
+  background-color: #FF5252;
+}
+
+.session-minus:active,
+.session-plus:active {
+  background-color: #D32F2F;
+}
+
+#clock {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  margin: 2% auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
+  z-index: -9999;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+#time {
+  font-size: 6em;
+  line-height: 280px;
+}
+
+.icons8-Pause {
+  margin-left: -10px;
+}
+
+.control-button {
+  background-color: #40C4FF;
+  width: 150px;
+  height: 80px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.control-button + .control-button {
+  margin-left: 5%;
+}
+
+.control-button:active {
+  background-color: #0277BD;
+}
+
+.footer {
+  background-color: #222;
+  border-top: 3px outset #444;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 7em;
+  min-width: 320px;
+  padding: 1em 1em 0 1em;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.footer .wunder-logo {
+  vertical-align: text-bottom;
+  width: 90px;
+}
+.footer .social-icons {
+  margin-top: 5px;
+}
+.footer .social-icons a {
+  font-size: 40px;
+  color: #0431B4;
+  margin: 5px;
+}
+.footer .social-icons a i:hover {
+  color: #7ba9d6;
+}
+.footer .social-icons .footer .container-fluid {
+  max-width: 768px;
+}
