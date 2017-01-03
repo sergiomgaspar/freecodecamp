@@ -19,10 +19,11 @@ section {
 #wrap {
   width: 100%;
   max-width: 800px;
-  margin: 3% auto 0; 
+  margin: 3% auto -10% auto; 
   box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
   padding: 3% 0;
   box-sizing: border-box;
+  //background-color: #FF5252;
 }
 
 .setter-block {
@@ -79,22 +80,22 @@ section + section {
 
 .break-minus,
 .break-plus {
-  background-color: #00E676;
+    border-radius: 50%;
 }
 
 .break-minus:active,
 .break-plus:active {
-  background-color: #00C853;
+    border-radius: 50%;
 }
 
 .session-minus,
 .session-plus {
-  background-color: #FF5252;
+    border-radius: 50%;
 }
 
 .session-minus:active,
 .session-plus:active {
-  background-color: #D32F2F;
+    border-radius: 50%;
 }
 
 #clock {
@@ -107,6 +108,11 @@ section + section {
   z-index: -9999;
 }
 
+#session-setter,
+#break-setter{
+   box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5); 
+    margin: 2% auto;
+}
 #timer {
   position: absolute;
   top: 0;
