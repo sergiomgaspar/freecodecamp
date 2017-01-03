@@ -34,19 +34,33 @@
  -----------------------------------------------------------------------------  
    
 */
-var http = require('http');
+var http = require('http')
+var bl = require('bl')
+var count = 0;
+var result = [];
 
-for (var i=0;i<3;i++){
-	http.get(process.argv[2+i], function(response) {
-		var result='';
-			response.on('data', function(d) {
-				result+=d;
-			});
-			response.on('end', function() {
-				//console.log(result.length);
-				console.log(result);
-			});
-		}).on('error', function(e) {
-		console.log("Got error: " + e.message);
-	})
+for (var i = 0; i < 3; i++) {
+    getUrl(i);
+}
+
+function getUrl (index) {
+        http.get(process.argv[2 + index], function(response) {
+        response.pipe(bl(function(err, data) {
+            if (err) {
+                return console.error(err);
+            }
+            result[index] = data.toString();
+            count++;
+            if (count === 3) {
+                printResult();
+            }
+            //console.log(data)
+        }))
+    })
+}
+
+function printResult() {
+    for (var i = 0; i < 3; i++) {
+        console.log(result[i]);
+    }
 }
