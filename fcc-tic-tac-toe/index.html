@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>FCC Tic Tac Toe</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!--  TicTacToe challenge for FreeCodeCamp
+		author: Sergio Gaspar
+		date: 2017.01
+-->
+
+<!--  Small animated title -->
+<div id="title">
+	<h1>
+		<div class="animated fadeInLeft">Tic Tac Toe</div>
+		<div class="animated fadeInRight">code challenge</div>
+	</h1>
+	<p class="animated fadeInUp delay-1">made for FreeCodeCamp</p>
+</div>
+
+  <div class="container">
+  <div class="board clearfix">
+    <div class="row">
+      <div class="square" id="0"></div>
+      <div class="square" id="1"></div>
+      <div class="square" id="2"></div>
+    </div>
+    <div class="row">
+      <div class="square" id="3"></div>
+      <div class="square" id="4"></div>
+      <div class="square" id="5"></div>
+    </div>
+    <div class="row">
+      <div class="square" id="6"></div>
+      <div class="square" id="7"></div>
+      <div class="square" id="8"></div>
+    </div>
+      
+    <div class="modal-container">
+    <!--  <div class="modal choose-modal">
+        <h3>Choose Your Weapon</h3>
+        <div class="button-area"><span class="x-marker">X</span><span class="o-marker">O</span>
+        </div>
+      </div>!-->
+      <div class="modal end-game-modal">
+        <h3></h3>
+       <!--  <p>Try harder next time!</p> !-->
+        <div class="button-area"><span>Play Again</span>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <script src="https://use.fontawesome.com/c51cc08ec6.js"></script>
+  <div class="container-fluid text-center">
+    <div class="footer-text text-muted ">
+      Created by Sérgio Gaspar for freeCodeCamp Challenge:
+      <a href="https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game" target="_blank">Build a Tic Tac Toe Game</a>.
+    </div>
+	<div class="social-icons">
+	  <a href="https://github.com/sergiomgaspar" target="_blank"><i id="github" class="fa fa-github" aria-hidden="true"></i></a>
+	  <a href="http://codepen.io/sergiomgaspar/" target="_blank"><i id="codepen" class="fa fa-codepen" aria-hidden="true"></i></a>
+	  <a href="https://www.freecodecamp.com/sergiomgaspar" target="_blank"><i id="freecodecamp" class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+	  <a href="https://www.linkedin.com/in/sergiomgaspar" target="_blank"><i id="linkedin" class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/sergiomgaspar" target="_blank"><i id="twitter" class="fa fa-twitter" aria-hidden="true"></i></a>
+	</div>
+  </div>
+</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

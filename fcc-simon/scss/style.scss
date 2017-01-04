@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
+@mixin center{
+  display:block;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+$back:#F0F2EF;
+$back:#1E1E24;
+$fore:#5C5346;
+$fore:#F1E4F3;
+body{
+  background:$back;
+}
+
+$yellow: #EFBD26;
+$blue: #006992;
+$red: #D63B29;
+$green: #00CC66;
+
+.container{
+  @include center;
+  height:200px;
+  width:200px;
+  border-radius:50%;
+}
+
+.simon{
+  height:120px;
+  width:120px;
+  cursor:pointer;
+  background:none;
+  padding:none;
+  border:none;
+  margin:none;
+  box-shadow:none;
+  outline:none;
+  border-radius:50%;
+  font-family:'Oswald';
+  font-size:50px;
+  transition: background 0.2s ease-in;
+  transition: border 0.1s linear;
+}
+
+/*#red, #green{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+#red {
+  top:0;
+}
+#green{
+  bottom:25%;
+}*/
+#yellow, #blue, #green, #red{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+#yellow{
+  left:0;
+}
+
+#blue{
+  left:25%;
+}
+
+#red{
+  left:50%;
+}
+
+#green{
+  left:75%;
+}
+$list: 'yellow', 'red', 'blue', 'green';
+$colors: $yellow, $red, $blue, $green;
+$ind: 1;
+@each $i in $list{
+  $colval: nth($colors, $ind);
+  ##{$i}{
+    border: $colval solid 15px;
+    color: $colval;
+    &:hover{
+      background: $colval;
+      color:$back;
+      &:active{
+        @if $i == 'yellow'{
+          transform: translateY(-50%) scale(1.1);  
+        } 
+        @else if $i=='blue'{
+          transform: translateY(-50%) scale(1.1);            
+        }
+        @else if $i=='red'{
+          transform: translateX(-50%) scale(1.1);  
+        }
+        @else{
+          transform: translateX(-50%) scale(1.1);  
+        }
+      }
+    }
+  }
+  
+  .clicked-#{$i}{
+    &:before{
+      display:block;
+      content:'';
+      opacity:0;
+      background:$colval;
+      height:100%;
+      width:100%;
+      position:absolute;
+      border-radius:50%;
+      left:0;
+      top:0;
+      animation: click 0.4s ease-in 1;
+    }
+  }
+  
+  $ind: $ind+1;
+}
+
+.options{
+  @include center;
+  display:block;
+  height:130px;
+  width:130px;
+}
+
+.start{
+  height:50px;
+  width: 50px;
+  display:block;
+  @include center;
+  background:none;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  color:$fore;
+  cursor:pointer;
+  & i{
+    font-size: 40px;
+  }
+  &:active{
+    color:$red;
+  }
+}
+
+.strict{
+  position:absolute;
+  bottom:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  outline:none;
+  color:$fore;
+  height:40px;
+  font-size: 25px;
+  font-family:'Oswald';
+  left:10px;
+}
+
+.steps{
+  display:block;
+  text-align: right;
+  position:absolute;
+  bottom:5px;
+  right:0;
+  & .text{
+    margin-right:20px;
+    font-size:25px;
+    color:$fore;
+    font-family: 'Oswald';
+  }
+}
+
+.status{
+  display:block;
+  position:absolute;
+  font-size:23px;
+  font-weight:300;
+  left:50%;
+  transform:translateX(-50%);
+  top:0px;
+  font-family:'Oswald';
+  color:$fore;
+}
+
+.clicked{
+  &:before{
+    display:block;
+    content:'';
+    opacity:0;
+    background:black;
+    height:100%;
+    width:100%;
+    position:absolute;
+    border-radius:50%;
+    left:0;
+    top:0;
+    animation: click 0.4s linear 1;
+  }
+}
+
+.disabled{
+  pointer-events:none;
+  cursor:wait;
+}
+
+
+@keyframes click{
+  0% {
+    opacity:0;
+  }  
+  30% {
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+// Footer stuff
+
+.footer {
+  background-color: #222;
+  border-top: 1px outset #444;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 3em;
+  min-width: 320px;
+  padding: 1em 1em 0 1em;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  .social-icons{
+    margin-top: 3px;
+    a{
+      font-size: 30px;
+      //color:#151922;
+      color:#0431B4;
+      margin: 5px;
+    i{
+      &:hover {
+        color: lighten(#4183c4, 15%);
+    }
+    }
+  }
+.footer .container-fluid {
+  max-width: 768px;
+}
+}
+}
