@@ -20,17 +20,17 @@ $yellow: #EFBD26;
 $blue: #006992;
 $red: #D63B29;
 $green: #00CC66;
-
+/*
 .container{
   @include center;
-  height:200px;
-  width:200px;
+  height:550px;
+  width:400px;
   border-radius:50%;
-}
-
+}*/
+/*
 .simon{
-  height:120px;
-  width:120px;
+  height:175px;
+  width:175px;
   cursor:pointer;
   background:none;
   padding:none;
@@ -43,19 +43,8 @@ $green: #00CC66;
   font-size:50px;
   transition: background 0.2s ease-in;
   transition: border 0.1s linear;
-}
-
-/*#red, #green{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-}
-#red {
-  top:0;
-}
-#green{
-  bottom:25%;
 }*/
+
 #yellow, #blue, #green, #red{
   position:absolute;
   top:50%;
@@ -63,11 +52,11 @@ $green: #00CC66;
 }
 
 #yellow{
-  left:0;
+  left:20%;
 }
 
 #blue{
-  left:25%;
+  left:35%;
 }
 
 #red{
@@ -75,8 +64,9 @@ $green: #00CC66;
 }
 
 #green{
-  left:75%;
+  left:65%;
 }
+
 $list: 'yellow', 'red', 'blue', 'green';
 $colors: $yellow, $red, $blue, $green;
 $ind: 1;
@@ -96,15 +86,15 @@ $ind: 1;
           transform: translateY(-50%) scale(1.1);            
         }
         @else if $i=='red'{
-          transform: translateX(-50%) scale(1.1);  
+          transform: translateY(-50%) scale(1.1);  
         }
         @else{
-          transform: translateX(-50%) scale(1.1);  
+          transform: translateY(-50%) scale(1.1);  
         }
       }
     }
   }
-  
+
   .clicked-#{$i}{
     &:before{
       display:block;
@@ -124,24 +114,58 @@ $ind: 1;
   $ind: $ind+1;
 }
 
-.options{
+/*.options{
   @include center;
   display:block;
-  height:130px;
-  width:130px;
+  height:530px;
+  width:530px;
+}*/
+/*.options{  
+  position:absolute;
+  top:10%;
+  height:775px;
+  width:775px;
+  cursor:pointer;
+  background:none;
+  padding:none;
+  border:none;
+  margin:none;
+  box-shadow:none;
+  outline:none;
+  border-radius:50%;
+  font-family:'Oswald';
+  font-size:50px;
+  //transition: background 0.2s ease-in;
+ //transition: border 0.1s linear;
+}*/
+.options {
+  height: 350px;
+  width: 430px; //300px;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+  background-color: #93A4AF;
+  border: 2px solid #908b85;
+  border-radius: 20px;
+  box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
 }
-
 .start{
-  height:50px;
-  width: 50px;
-  display:block;
-  @include center;
+ // height:50px;
+ // width: 50px;
+ // display:block;
+ // @include center;
+  //position:absolute;
   background:none;
   border:none;
   outline:none;
   box-shadow:none;
-  color:$fore;
+  color:#CCDD00;
   cursor:pointer;
+  top:0%;
+  left: 40%;
+  font-size: 25px;
+  font-family:'Oswald';
   & i{
     font-size: 40px;
   }
@@ -152,7 +176,9 @@ $ind: 1;
 
 .strict{
   position:absolute;
-  bottom:5px;
+  //bottom:5px;
+  top:10%;
+  left: 30%;
   cursor:pointer;
   background:none;
   border:none;
@@ -161,19 +187,22 @@ $ind: 1;
   height:40px;
   font-size: 25px;
   font-family:'Oswald';
-  left:10px;
+  
 }
 
 .steps{
   display:block;
   text-align: right;
   position:absolute;
-  bottom:5px;
-  right:0;
+  
+  //bottom:5px;
+  //right:0;
   & .text{
-    margin-right:20px;
+    top: 15%;
+    left: 60%;
+  //  margin-right:20px;
     font-size:25px;
-    color:$fore;
+    color:#000;
     font-family: 'Oswald';
   }
 }
@@ -181,13 +210,12 @@ $ind: 1;
 .status{
   display:block;
   position:absolute;
-  font-size:23px;
-  font-weight:300;
-  left:50%;
   transform:translateX(-50%);
-  top:0px;
+  font-size: 25px;
   font-family:'Oswald';
   color:$fore;
+  top:0%;
+  left: 40%;
 }
 
 .clicked{
