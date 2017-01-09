@@ -21,29 +21,29 @@
       <section class="setter-block" id="break-setter">
         <h2>Break length</h2>
         <img class="button break-minus icon icons8-Minus-2-Math" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/remove-button-md.png" width="64" height="64" />
-        <input class="length-field" id="break-length" type="text" readonly value="5"></input>
+        <input class="length-field" id="break-length" type="text" readonly value="1" style="color:black;"></input>
         <img class="button break-plus icon icons8-Plus-2-Math" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/add-button-md.png" width="64" height="64" />
       </section>
       <section class="setter-block" id="session-setter">
         <h2>Session length</h2>
         <img class="button session-minus icon icons8-Minus-2-Math" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/remove-button-md.png" width="64" height="64" />
-        <input class="length-field" id="session-length" type="text" readonly value="25"></input>
+        <input class="length-field" id="session-length" type="text" readonly value="1" style="color:black;"></input>
         <img class="button session-plus icon icons8-Plus-2-Math" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/add-button-md.png" width="64" height="64" />
       </section>
     </div>
     
     <div id="clock">
       <div id="timer">
-        <p id="time">25:00</p>
+        <p id="time">1:00</p>
       </div>
     </div>
 
     <div id="control-buttons">
       <div class="button control-button play-pause">
-        <img class="icon icons8-Play" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABw0lEQVR4Xu3a0U0DMRAE0NlKoIRQAS3QAbRAB6GDdAB0AB1AB5SQdAAVLFopF0UIge3zecfn9U9+cj7P8zqSHQsGbzJ4fgRAVMDgArEEBi+A+BGMJRBLYHCBWAKlBaCqGwAXAA4i8lHaj/dzRRWgqo8A7s4G/wbgQUTss6uWDaCqFtwAfmsGsBOR114USgCeANz+E3APYCsiz+wQJQA2y9eJweghlgaYnGghWgHQQrQGoIPwAqCB8AZwh2ABcINgA2gOwQrQDIIdYHGIXgAWg+gNoDpErwDVIHoHOIe4F5GXxE3a6WtrAbBAnwCuRMQ2XsltTQAW2k6ltsnpgfw/RlQ15zwgZyw1vmvLYJfT0Zoq4AvAZtQlcABwU3I63XsFWHA7e7RzyqLWK8Ds4JNWbwDVgvcGUD14LwCLBWcHWDw4K0Cz4GwAzYOzALgF9wZwD+4FQBO8NQBd8FYAtMHnAKRckKAPPgfgrysy78crMtlnc0VbuQoPZW+G7J2q+rMKLLhtS9d/SWpCP16TuwSwLzmIqDB5VbooqoAqbybpJABIJsJtGFEBbvQkL44KIJkIt2FEBbjRk7w4KoBkItyGMXwFfAM4KexB15NqiAAAAABJRU5ErkJggg==" width="64" height="64" />
-        <img class="icon icons8-Pause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABg0lEQVR4Xu1awVEDMRCTOqATSAdQAVABdAClhBKogFABdEDohA7EbHJ5kZmTk9yQOcvvtc4r79pr3RKdD3buP0JAIqBzBpICnQdADsGkQFKgcwaSAscEgKQLAE8ArkdwVgBeSf443xtwHwDcjdh/AnhxcfdhHRUBkr4AXDlOAViRvHdsJb0Zzu+g1iQXDu5JCZBUjhcB9iBpES5JNujWcEFy3ThnY24taB+wpAr7j5aPTkjADclKh+YRApopGyYkApICOQNyCOYWyDWYOiCFUEsdkUpwurdASuG8BfIYymswz+GWG2lnGz3gENZqTvSA6AHRA6IHRA+IHhA9IHpASx0RPSB6wGQ/RyOIRBCJIBJBJIJIy5V8CkGk7xaZQRSpvpxLk/l3kmNdXxsoSdVVdmvifpN0G7X+QB4siQ0LrTa5Z6dNjuTSdKgIKNxHo1Os8n75b21yrkPnbHdUBJyzY+7aQoDL1FztEgFz3VnXr0SAy9Rc7RIBc91Z169EgMvUXO1+Abnfb1CP/n9dAAAAAElFTkSuQmCC" width="64" height="64" />
+          <img class="icon icons8-Play icons8-Pause" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/play-button-md.png" width="64" height="64" />
+       
       </div>
-      <div class="button control-button reset"><img class="icon icons8-Restart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFQUlEQVR4Xu1bi3EUMQyVKgAqIKkAUgGkApIKIBUQKoBUAKmAUAFJBSQVkFRAUgGkAjFvxz5272xJ68/dQfDMDZnBlq1n6UmWvUyNm4g8J6JnRIR/8bti5g+Np2kmjmskJZR9mZB3yMznNfP0HOsGwKlsaq27zHzbU4ka2UkAKpRdXss9Mz+uWeDyWBGBNX0nolNm/lUrmxsqm1oL/D/lFsXrFpFLInpBRFD+AzOfFgsjIgDwhog+1whRxp60JsARAHFauBd45rpEh8EFOoLQnAATAES9YQ0nc0FYcEAnEJoToAIAdId7AHQ3N0xIsDEIzQkwWGvkgNxmwxX2vSCsRIGGIDQnQCcA6ObmhVwYbEGMzQkwAPCJiN46fB1uAEtQyTGbCDWwhOYEGJUWkQMiOiOiRwYQpjuomaCIfCOi0jjenADHyooIEiwkRcgJtHbOzIe5Dr0soAsBppQQEVjCawOErDvmOGAnpJulaWwXAswp6QQBfIAIMmk5AGpMHxN0IUBtlx0gXDPznglAIJivDpbVunQjQAMEcMIrpc8RM8NlFi2VB/wgIrhAqt3jAEJEHw2AuhKg4gpwWeQAueiA0Ii1LTLFuZngsLNGiFwbAWZIESFSs+CJey4DoO3+hNgUENZKgAWR4ZaZd+O48WHIQm7FrDMgrJ0Al0EQEbgwNjPXFhw1BkAjkC/MjPR4pSVA2AgBJkDQ8oMLZsaGU6wHgDx+KoglY2jsvwTCRgiwwAqegAwjAJr5u3w6gPCpdQ2wJhyLCM4CKNGn2mCpEQDthPWOmfH/ZkN90Tp9mUIadhCRYyVko6h6HAFAlRWXGKm2t01KzcHHIMPBsiMAkhG80Zg+R9lcXxFB0pNMjBhNRHDcRe6fagu2bLGYTcgI9wi59HjfAmDjMb0WNBFB6v4+I2cAQOvw4AHYiqSmxgoMFz+xLEBNgGoWtq6x/wHQSf6/BVgu8C9wgHbHMViAdg54EFHgISdCe1YqPKmerIu5W84jItkq15AKYzIRQSHxaWbirTjfl4BiHIbumHknAqBVT1ZKySWL2cQYo3g7VLk8L0QumXl/EwrUziki2jF/UhCxioh/nRs4CqN/SmKBB4qKorW71Gu8cVU2LYoGAKxHEQNivRbcUq5j9xe8tnwxkq2eEFG2NN5y8S1kGbs/qXItA6DVBrC2rT8dGqc/6KBejVmXi8gXUCTdSlcIr0bA/Nrl7k72cjRwgVZKRhf1yUkLEy6VISK4FB1ufDJtpcSfeyChXShA9hkzH5UutMc4EcFz3+T1XZjvhplXSv85ALQDUly/+8Kkh8JjmSKCoqf1UYb/iUxwBYsQt8ISHDu/Qnxj8Kxnctaz1IETiAhxda3EGAgPZq/5PNan3m1aACAqAITcBWMEE9EBIKy8wuph/iHUQfkc28dpb/DOUdsc85OZkFWBFK1XmYNLhDjb5ROZsBb4u0Z2UXm8Z8JlrboWE4DAB2BP7K4HhOZAzFQc80N57Lz5EYULgAACzA3+brnD2OoBGqwCfjjLKoLSeAaLvCR3c53yMJj9gXc+NwABBO/73NTCAAB2BD/8vQwIAMYvfm9o+XdqjqugvJuQZwEQZzTuE3vwnkdmUQW7CIBgDUiW8HJkjkt4FJnbByZ/XBqBigEYWQN8FEmTlyDnKpjrP7xa9T7fyQmpBmDEDQACv95AQHFYHh5kuX29KwBj4aESi+xMe7RcYgUX4SQ6eexcIsidCtcID6kqgABX4Je7d8hNcxdyD4ReVKardzs1URMX8AIVPtONoS41bAiRngTGO6fV7zeNIYfxRvMuIQAAAABJRU5ErkJggg==" width="64" height="64" /></div>
+      <div class="button control-button reset"><img class="icon icons8-Restart" src="https://sergiomgaspar.github.io/freecodecamp/pomodoro/assets/restart-button-md.png" width="64" height="64" /></div>
     </div>
   
   </div>

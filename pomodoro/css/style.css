@@ -7,6 +7,7 @@
 body {
   width: 100%;
   height: 100%;
+    background-color: #222;
 }
 
 section {
@@ -111,7 +112,8 @@ section + section {
 #session-setter,
 #break-setter{
    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5); 
-    margin: 2% auto;
+   margin: 2% auto;
+   color:#FFF;
 }
 #timer {
   position: absolute;
@@ -123,7 +125,8 @@ section + section {
   max-width: 70%;
   max-height: 70%;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #222;
+    color:#FFF;
   box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
@@ -138,7 +141,7 @@ section + section {
 }
 
 .control-button {
-  background-color: #40C4FF;
+  background-color: #77CA0B;//40C4FF;
   width: 150px;
   height: 80px;
   box-sizing: border-box;
@@ -152,7 +155,7 @@ section + section {
 }
 
 .control-button:active {
-  background-color: #0277BD;
+  background-color: #417201;
 }
 
 .footer {

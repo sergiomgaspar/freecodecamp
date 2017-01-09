@@ -1,14 +1,30 @@
-var run = false; // variable for determination if time runs or not
-var type = 'session'; // variable for determination if session time runs or break time
+/**
+	Pomodoro Clock challenge for FreeCodeCamp
+	
+	This is the code for the Pomodoro Clock challenge. Feel free to use but keep in mind its a WIP :)
+	Any comments feel free to reach-out @sergiomgaspar.
+	
+    Note: This JS is a bit different than the simon game. In this, a "direct" JQuery approach is used where all of the buttons have a caller functions!
+    
+	author: Sergio Gaspar
+	date: 2017.01
+*/
 
-// button for decreasing break length
+var isRunning = false; 
+var execType = 'work'; 
+var maxWorkLength = 60; //in minutes
+var maxBreakLength = 60; //in minutes
+var minWorkLength = 1; //in minutes
+var minBreakLength = 1; //in minutes
+
+// button to decrease break length
 $('.break-minus').click(function() {
-  if (run == false) {
-    var length = document.getElementById('break-length').value;
-    if (length > 1) {
-      length = +length - 1;
+  if (isRunning === false) {
+    var length = Number(document.getElementById('break-length').value);
+    if (length > minBreakLength) {
+      length -= 1;
       document.getElementById('break-length').value = length;
-      if (type == 'break') {
+      if (execType === 'break') {
         if (length < 10) {
           length = '0' + length;
         };
@@ -18,14 +34,14 @@ $('.break-minus').click(function() {
   };
 });
 
-// button for increasing break length
+// button to increase break length
 $('.break-plus').click(function() {
-  if (run == false) {
-    var length = document.getElementById('break-length').value;
-    if (length < 60) {
-      length = +length + 1;
+  if (isRunning === false) {
+    var length = Number(document.getElementById('break-length').value);
+    if (length < maxBreakLength) {
+      length += 1;
       document.getElementById('break-length').value = length;
-      if (type == 'break') {
+      if (execType === 'break') {
         if (length < 10) {
           length = '0' + length;
         };
@@ -36,14 +52,14 @@ $('.break-plus').click(function() {
   };
 });
 
-// button for decreasing session length
+// button to decrease session length
 $('.session-minus').click(function() {
-  if (run == false) {
-    var length = document.getElementById('session-length').value;
-    if (length > 1) {
-      length = +length - 1;
+  if (isRunning === false) {
+    var length = Number(document.getElementById('session-length').value);
+    if (length > minWorkLength) {
+      length -= 1;
       document.getElementById('session-length').value = length;
-      if (type == 'session') {
+      if (execType === 'work') {
         if (length < 10) {
           length = '0' + length;
         };
@@ -53,14 +69,14 @@ $('.session-minus').click(function() {
   };
 });
 
-// button for increasing session length
+// button to increase session length
 $('.session-plus').click(function() {
-  if (run == false) {
-    var length = document.getElementById('session-length').value;
-    if (length < 60) {
-      length = +length + 1;
+  if (isRunning === false) {
+    var length = Number(document.getElementById('session-length').value);
+    if (length < maxWorkLength) {
+      length += 1;
       document.getElementById('session-length').value = length;
-      if (type == 'session') {
+      if (execType === 'work') {
         if (length < 10) {
           length = '0' + length;
         };
@@ -70,23 +86,22 @@ $('.session-plus').click(function() {
   };
 });
 
-// progress bar filler function
+// here is where the drawing "magic" happens
 function drawSector(perc, colour) {
   var clock = $('#clock');
   var deg = 90 + perc*360;
   if (perc <= 0.5) {
-    clock.css('background-image','linear-gradient(' + deg + 'deg, transparent 50%, #ffffff 50%), linear-gradient(90deg, #ffffff 50%, transparent 50%)');
+    clock.css('background-image','linear-gradient(' + deg + 'deg, transparent 50%, grey 50%), linear-gradient(90deg, grey 50%, transparent 50%)');
   } else {
     if (deg >= 360) {
       deg -= 360;
     };
-    clock.css('background-image','linear-gradient(' + deg + 'deg, '+colour+' 50%, transparent 50%),linear-gradient(90deg, #ffffff 50%, transparent 50%)');
+    clock.css('background-image','linear-gradient(' + deg + 'deg, '+colour+' 50%, transparent 50%),linear-gradient(90deg, grey 50%, transparent 50%)');
   };
 };
 
-// function to run session
 function startSession() {
-  if (run) {
+  if (isRunning) {
     var colour = '#FF5252'; // color for progress bar
     $('#clock').css('background-color', colour);
     var my_session = document.getElementById('time');
@@ -99,14 +114,14 @@ function startSession() {
     
     if (sec == 0) {
       if (min == 0) {
-        $('#clock').css('background-color', 'white');
+        $('#clock').css('background-color', 'grey');
         $('#clock').css('background-image', 'none');
         var length2 = document.getElementById('break-length').value;
         if (length2 < 10) {
           length2 = "0" + length2;
         };
         document.getElementById('time').innerHTML = length2+":00";
-        type = 'break';
+        execType = 'break';
         setTimeout(startBreak,1000);
         return;
       };
@@ -130,7 +145,7 @@ function startSession() {
 
 // function to run break
 function startBreak() {
-  if (run) {
+  if (isRunning) {
     var colour = '#00E676'; // color for progress bar
     $('#clock').css('background-color', colour);
     var my_break = document.getElementById('time');
@@ -143,14 +158,14 @@ function startBreak() {
 
     if (sec == 0) {
       if (min == 0) {
-        $('#clock').css('background-color', 'white');
+        $('#clock').css('background-color', 'grey');
         $('#clock').css('background-image', 'none');
         var length2 = document.getElementById('session-length').value;
         if (length2 < 10) {
           length2 = "0" + length2;
         };
         document.getElementById('time').innerHTML = length2+":00";
-        type = 'session';
+        execType = 'work';
         setTimeout(startSession,1000);
         return;
       };
@@ -177,27 +192,27 @@ function startBreak() {
 
 // button to start/stop timer
 $('.play-pause').click(function() {
-  if (run == false) { // if timer isn't running we start/resume it
-    run = true;
-    if (type == 'session') { // here we determine if it is session time is about to start/resume
+  if (isRunning === false) { // if timer isn't running we start/resume it
+    isRunning = true;
+    if (execType === 'work') { // here we determine if it is session time is about to start/resume
       setTimeout(startSession,1000);
-    } else if (type == 'break') { // here we determine if it is break time is about to start/resume
+    } else if (execType === 'break') { // here we determine if it is break time is about to start/resume
       setTimeout(startBreak,1000);
     };
   } else { // if timer is running we stop it
-    run = false;
+    isRunning = false;
   };
 });
 
 // button to reset timer
 $('.reset').click(function() {
-  run = false;
-  type = 'session';
+  isRunning = false;
+  execType = 'work';
   var length = document.getElementById('session-length').value;
   if (length < 10) {
     length = '0' + length;
   };
   document.getElementById('time').innerHTML = length +":00";
-  $('#clock').css('background-color', 'white');
+  $('#clock').css('background-color', 'grey');
   $('#clock').css('background-image', 'none');
 });
