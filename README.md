@@ -1,6 +1,6 @@
 # FreeCodeCamp assets repo
 
-This repo was created to store static assets used in the FreeCodeCamp challenges.
+This repo was created to store static assets used in the FreeCodeCamp challenges along with the code used in the first backend exercises.
 
 ### Current projects
 
@@ -11,5 +11,7 @@ This repo was created to store static assets used in the FreeCodeCamp challenges
   - NodeJS (random stuff)
   
 Feel free to use, any questions let me know.
+
+For the next Node.JS exercises i will create dedicated repo's.
 
 @Sergio Gaspar
