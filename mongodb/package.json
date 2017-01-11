@@ -1,0 +1,25 @@
+{
+  "name": "@sergiomgaspar/sandbox",
+  "version": "1.0.2",
+  "description": "FCCnpm",
+  "main": "3.find.js",
+  "scripts": {
+    "test": "node 3.find.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiomgaspar/freecodecamp.git"
+  },
+  "author": "sergiomgaspar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiomgaspar/freecodecamp/issues"
+  },
+  "homepage": "https://github.com/sergiomgaspar/freecodecamp#readme",
+  "dependencies": {
+    //"bl": "^1.2.0",
+   // "body-parser": "^1.15.2",
+   // "jade": "^1.11.0",
+    //"lb": "0.0.1"
+  }
+}
