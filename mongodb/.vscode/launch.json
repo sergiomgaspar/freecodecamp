@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}\\3.find.js",
+            "program": "${workspaceRoot}\\6.update.js",
             "cwd": "${workspaceRoot}",
             "outFiles": [],
             "sourceMaps": true

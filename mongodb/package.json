@@ -2,9 +2,9 @@
   "name": "@sergiomgaspar/sandbox",
   "version": "1.0.2",
   "description": "FCCnpm",
-  "main": "3.find.js",
+  "main": "5.insert.js",
   "scripts": {
-    "test": "node 3.find.js"
+    "test": "node 5.insert.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,6 @@
   },
   "homepage": "https://github.com/sergiomgaspar/freecodecamp#readme",
   "dependencies": {
-    //"bl": "^1.2.0",
-   // "body-parser": "^1.15.2",
-   // "jade": "^1.11.0",
-    //"lb": "0.0.1"
+    "mongodb": "^2.2.20"
   }
 }
